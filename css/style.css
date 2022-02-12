@@ -65,6 +65,15 @@ body{
 .nav-item.icon{
     padding: 0;
 }
+.nav-item.icon a{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .nav-item.icon a i{
     color: var(--btn-green);
     font-size: 20px;
