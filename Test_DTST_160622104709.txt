@@ -1,0 +1,1065 @@
+﻿Quyida nomlari keltirilgan olimlardan qaysilari sifat sohasi bo'yicha izlanish olib borishgan.
+====
+#Uolter Shuxart, Aristotel,Edvard Deming,Singo Siego 
+====
+Albert Eynshteyn, N.Bor, Edvard Deming,Singo Siego
+====
+R.Floyd, E.Dekstra, Edvard Deming,Singo Siego
+====
+R.Floyd, E.Dekstra, Uolter Shuxart, Aristotel
+++++
+
+Quyidagi kodni tahlil qiling:
+  #include <iostream>
+  using namespace std;
+  class A
+  {
+  public:
+    int s;
+    A(int newS)
+    {
+      s = newS;
+    }
+    void print()
+    {
+      cout << s;
+    }
+  };
+  int main()
+  {
+    A a;
+    a.print();
+  }
+====
+#Dasturda kompilyatsion xatolik yuz beradi, chunki “A” sinf ommaviy ochiq (public) sinf emas.
+====
+Dasturda kompilyatsion xatolik yuz beradi, chunki “A” sinf parametrsiz konstruktorga ega emas.
+====
+Dasturda hech qanday xatolik yuz bermaydi va dastur ishga tushadi. Lekin hech narsa chop etilmaydi.
+====
+Dastur to‘g‘ri ishlashi uchun A a ni A a(5) ga almashtirish kerak.
+++++
+
+Quyidagi kodda qanday xatolik mavjud?
+  #include <iostream>
+  using namespace std; 
+  class TempClass
+  {
+  public:
+    int i; 
+    TempClass()
+    {
+      int i = 5;
+    }
+  };
+  int main()
+  {
+    TempClass temp(2);
+  }
+====
+#Dasturda kompilyatsion xatolik mavjud, chunki TemClass int turidagi parametri mavjud konstruktorga ega emas.
+====
+Dasturda kompilyatsion xatolik mavjud, chunki TemClass parametrsiz (jimlik qoidasiga ko‘ra ob’yekt yaratuvchi) konstruktorga ega emas.
+====
+Dastur bexato kompilyatsiya qilinadi, ammo ishga tushmaydi.Chunki sinf ommaviy ochiq (public) emas.
+====
+Dastur bexato kompilyatsiyalanadi va ishga tushadi.
+++++
+
+ISO (Xalqaro Standartlashtirish Tashkiloti) nuqtai - nazaridan sifat tushunchasiga berilgan ta'rifni ko'rsating.
+====
+#sifat - bu ma'lum qilingan yoki ko'zda tutilgan ehtiyojlarni qondirish qobiliyatini ta'minlaydigan mahsulot, jarayon yoki xizmatning xarakteristikalari va xususiyatlarining to’liqligi.
+====
+iste’molchi tomonidan uning xususiyatlariga, sifat ko’rsatkichlariga, individual va ijtimoiy ehtiyojlarga, majburiy standartlarga muvofiqligi darajasini maqsadiga muvofiq bahosi.
+====
+dasturiy ta’minot sifati - bu uning kerakli xususiyatlarning kombinatsiyasiga ega bo'lish darajasi.
+====
+sifat - bu dasturiy ta'minotni mo'ljallangan maqsadga muvofiq foydalanuvchi ehtiyojlarini qondirish qobiliyatini tavsiflovchi xususiyatlar to'plami.
+++++
+
+Quyidagi kodni tahlil qiling:
+  #include <iostream>
+  using namespace std; 
+  class Test
+  {
+  public:
+    int x; 
+    Test()
+    {
+      cout << "Test";
+    }
+  };
+  int main()
+  {
+    Test test;
+    cout << test.x;
+  }
+====
+#Dastur yaxshi ishga tushadi, lekin test.x oldindan aniqlanmagan.
+====
+Dasturda kompilyatsion xatolik mavjud, chunki test qiymat bilan yuborilmagan.
+====
+Dasturda kompilyatsion xatolik mavjud, chunki xa ga qiymat berilmagan.
+====
+Dasturda kompilyatsion xatolik mavjud, chunki Test sinfi parametrsiz konstruktorga ega emas.
+++++
+
+Dasturiy ta'minot sifati - bu dasturiy ta'minotni mo'ljallangan maqsadga muvofiq foydalanuvchi ehtiyojlarini qondirish qobiliyatini tavsiflovchi xususiyatlar to'plami.
+====
+#Rost
+====
+Yolg’on
+====
+Salbiy
+++++
+
+Qaysi javobda dasturiy ta'minot sifatiga to'g'ri ta'rif berilgan?
+====
+#Dasturiy ta'minot sifati - bu dasturiy ta'minotni mo'ljallangan maqsadga muvofiq foydalanuvchi ehtiyojlarini qondirish qobiliyatini tavsiflovchi xususiyatlar to'plami.
+====
+Dasturiy ta'minot sifati - bu dasturga obyektiv ravishda xos bo'lgan, uning hayotiy tsiklida (rivojlanishi, qo'llanilishi, saqlanishi) namoyon bo'ladigan xususiyatlardir.
+====
+Dasturiy ta'minot sifati - bu dasturni obyektiv xususiyatlari jamlanmasidir.
+====
+Dasturiy ta'minot sifati - bu dasturni subyektiv xususiyatlari jamlanamsidir. 
+++++
+
+Quyidagi jumla rostmi? "Sifat ta’minoti - bu mahsulot yoki jarayonlarning ma’lum sifat talablariga javob berishini ta'minlash uchun zarur bo'lgan rejalashtirilgan va muntazam ravishda amalga oshiriladigan tadbirlar majmuidir".
+====
+#Rost
+====
+Yolg'on
+++++
+
+Quyidagilarning qaysilari dasturiy ta'minotning sifat ko'rsatkichlari hisoblanadi?
+====
+#funksionallik,ishonchlilik,ta'minotning qulayligi,samaradorlik,foydalanishning qulayligi. 
+====
+funksionallik,ishonchlilik,ta'minotning qulayligi,samaradorlik,deskritilik. 
+====
+qimmatlilik,ta'minotning qulayligi,samaradorlik,foydalanishning qulayligi. 
+====
+protativlik,mobillik
+++++
+
+Dasturiy ta'minotning bir muhitdan ikkinchisiga (apparat, dasturiy ta'minot muhitiga) o'tkazilganda ishlashni davom ettirish qobiliyati qaysi sifat ko'rsatkichni ifodalaydi?
+====
+#Portativlik(mobillik)
+====
+Funksionallik
+====
+Ishonchlilik
+====
+Samaradorlik
+++++
+
+Dasturiy ta'minotning berilgan shartlarda foydalanuvchiga kerak bo’lgan masalani yechish qobilyati qaysi ko'rsatkich hisoblanadi?
+====
+#Funksionallik
+====
+Samaradorlik
+====
+Ishonchlilik
+====
+Portativlik(mobillik)
+++++
+
+Dasturlarni texnik xizmat ko'rsatish bilan bog'liq barcha turdagi tadbirlarni amalga oshirishning qulayligi qaysi ko'rsatkich hisoblanadi?
+====
+#Ta'minotning qulayligi
+====
+Samaradorlik
+====
+Ishonchlilik
+====
+Portativlik(mobillik)
+++++
+
+Dasturiy ta'minotning belgilangan shartlarda o'z vazifalarini bajara olish qobiliyati qaysi ko'rsatkich hisoblanadi?
+====
+Ta'minotning qulayligi
+====
+Samaradorlik
+====
+#Ishonchlilik
+====
+Portativlik(mobillik)
+++++ 
+
+Berilgan sharoitlarda dasturiy ta'minotning ajratilgan resurslarga nisbatan kerakli ko'rsatkichlarni ta'minlash xususiyati qaysi ko'rsatkich hisoblanadi?
+====
+Ta'minotning qulayligi
+====
+#Samaradorlik
+====
+Ishonchlilik
+====
+Portativlik(mobillik)
+++++
+
+Dasturiy ta'minotni o'rganish va foydalanishda oson bo'lishi qobiliyati qaysi ko'rsatkich hisoblanadi?
+====
+#Foydalanishning qulayligi
+====
+Samaradorlik
+====
+Ishonchlilik
+====
+Portativlik(mobillik)
+++++
+
+Ekspert usul qanday usul hisoblanadi?
+====
+#Ekspert usul - bu o'lchov jarayonida bir yoki bir nechta mutaxassisning malakasi, tajribasi, ijodkorligini qo’llashga asoslangan umumiy usullar to'plami.
+====
+Ekspert usul - bu nechta mutaxassisning malakasini qo’llashga asoslangan umumiy usullar to'plami.
+====
+Ekspert usul - bu o'lchov jarayonida bir yoki bir nechta mutaxassisning malakasi, tajribasi, ijodkorligini qo’llashga asoslangan xususiy usullar to'plami.
+====
+Ekspert usul - bu tekshirish bir nechta mutaxassisning ijodkorligini qo’llashga asoslangan umumiy usullar to'plami.
+++++
+
+Dasturlarning o’lchov nazariyasi qanday nomlanadi?
+====
+#Programmometrika
+====
+Planimetriya
+====
+Programmotexnika
+====
+Leksika
+++++
+
+Mahsulot sifatining o'lchov shkalasi necha turga bo'linadi?
+====
+#2
+====
+1
+====
+3
+====
+4
+++++
+
+Quyidagi fomulalardan qaysi bor Makkeyb siklomatik sonini ifodalaydi?
+====
+#Z = m-n+2, bu yerda m-yoylar soni, n-tugunlar soni
+====
+Z = m-n+2, bu yerda m-tugunlar soni, n-yoylar soni
+====
+Z = m+n-2, bu yerda m-yoylar soni, n-tugunlar soni
+====
+Z = m*n+2, bu yerda m-yoylar soni, n-tugunlar soni
+++++ 
+
+Dasturning siklomatik murakkabligi – bu ...
+====
+#dasturiy tizimning statik tahliliga asoslangan va dasturning sifatini o’lchash uchun qo’llaniladigan dasturning strukturaviy(topologik) murakkabligi o’lchovidir.
+====
+dasturning sifatinin strukturaviy jihatdan tahlil qilish usuli hisoblanadi.
+====
+dasturning sifatini o’lchash uchun qo’llaniladigan dasturning lug'aviy(leksik) murakkabligi o’lchovidir.
+====
+dasturning lug'aviy(leksik) murakkabligi o’lchovidir.
+++++
+
+Dastur kodida faqat bitta if opearatori qo'llanilgan bo'lsa, dasturdagi marshrutlar soni nechta bo'ladi?
+====
+#2 ta
+====
+3 ta
+====
+1 ta
+====
+4 ta
+++++
+
+Standart tushunchasiga to'g'ri berilgan ta'rifni ko'rsating.
+==== 
+#Standart (ing.standart - meyor, na’muna) - bu berilganlarni boshqa obyektlar uchun moslashtirishda qo’llaniladigan na’muna, etalon, model hisoblanadi. 
+====
+Standart (ing.standart - qonun, qoida) - bu berilganlarni boshqa obyektlar uchun moslashtirishda qo’llaniladigan qonun, qoida, usul hisoblanadi.
+====
+Standart (ing.standart - meyor, na’muna ) - bu dasturiy ta'minotning na’munasi hisoblanadi.  
+====
+Standart (ing.standart - meyor, na’muna ) - bu dasturiy ta'minotning etaloni hisoblanadi.
+++++
+
+“De-fakto” standarti qanday standart hisoblanadi?
+====
+#bozorning katta qismini egallagan qandaydir ishlab chiqaruvchining mahsuloti va undan boshqa ishlab chiquvchilar bozorda o’z o’rniga ega bo’lish uchun nusxa olishi yoki foydalanishga harakat qilishi natijasida yuzaga keladigan standart hisoblanadi.
+====
+Bu standart ochiq muhokama shaklida consensus qoidalarga amal qilgan holda, har bir ishtirokchining imtiyozlarga ega ekanligi nuqtai-nazaridan yaratiladi. Ishlab chiqarishda hech biri mustaqil harakat qila olmaydi. 
+====
+Barcha ishlab chiqaruvchilar birdek amal qiladigan standart.
+====
+Barcha iste'molchilar birdek amal qiladigan standart 
+++++
+
+“De-yure” standarti qanday standart hisoblanadi?
+====
+bozorning katta qismini egallagan qandaydir ishlab chiqaruvchining mahsuloti va undan boshqa ishlab chiquvchilar bozorda o’z o’rniga ega bo’lish uchun nusxa olishi yoki foydalanishga harakat qilishi natijasida yuzaga keladigan standart hisoblanadi.
+====
+#Bu standart ochiq muhokama shaklida consensus qoidalarga amal qilgan holda, har bir ishtirokchining imtiyozlarga ega ekanligi nuqtai-nazaridan yaratiladi. Ishlab chiqarishda hech biri mustaqil harakat qila olmaydi. 
+====
+Barcha ishlab chiqaruvchilar birdek amal qiladigan standart.
+====
+Barcha iste'molchilar birdek amal qiladigan standart 
+++++
+
+Paydo bo'lishga bog'liq holda standartlar qanday turlarga bo'linadi?
+====
+#De-fakto,De-yure
+====
+Xalqaro,milliy
+====
+Xususiy
+====
+Global
+++++
+
+Qanday standart "xomaki standart" deyiladi?
+====
+#bu standartlashtirish bo’yicha organlar qabul qiladigan va potensial iste’molchilar doirasigacha ishlaydigan vaqtinchalik amal qiladigan xujjat. 
+====
+bozorning katta qismini egallagan qandaydir ishlab chiqaruvchining mahsuloti va undan boshqa ishlab chiquvchilar bozorda o’z o’rniga ega bo’lish uchun nusxa olishi yoki foydalanishga harakat qilishi natijasida yuzaga keladigan standart hisoblanadi.
+====
+Bu standart ochiq muhokama shaklida consensus qoidalarga amal qilgan holda, har bir ishtirokchining imtiyozlarga ega ekanligi nuqtai-nazaridan yaratiladi. Ishlab chiqarishda hech biri mustaqil harakat qila olmaydi. 
+====
+Barcha ishlab chiqaruvchilar birdek amal qiladigan standart.
+++++
+
+Standartlar dasturiy ta'minotni ishlab chiqishda qanday ahamiyatga ega?
+====
+#Ular dasturiy ta’minotning ma’lumotlari va dasturlarini boshqa dasturchilar foydalanishi uchun ta’minlab beradi.
+====
+Dasturlash ishlarini qulaylashtiradi.
+====
+Jamoaviy dasturlash ishlarini optimallashtiradi.
+====
+Dasturiy mahsulotning sifatini ta'minlaydi.
+++++
+
+Standart texnik yutuqlar, amaliy tajribalarga va ilmiy tekshirishlar asosida aniqlangan tadqiqotlar natijalariga asoslanishi kerak va bunday standartdan foydalanish barcha uchun  optimal foyda keltirishi kerak. 
+====
+#Rost
+====
+Yolg'on
+++++
+
+Masshtabga bog'liq holda standartlar qanday turlarga bo'linadi?
+====
+#Xalqaro,Milliy 
+====
+De-fakto,De-yure
+====
+Xususiy,korporativ
+====
+Mintaqaviy,milliy
+++++
+
+Operator - bu dasturda qayta ishlanadigan qandaydir obyekt yoki qiymat. 
+====
+#Yo'lg'on
+====
+Rost
+++++
+
+Dastur lug'ati qanday qismlardan tashkil topadi?
+====
+#Dasturning takrorlanmas operatorlari va operandlari soni yig'indisidan
+====
+Dasturning barcha takrorlanuvchi operatorlari va operandlari soni yig'indisidan
+====
+Dasturning barcha operatorlari soni yig'indisidan 
+====
+Dasturning barcha operandlari soni yig'indisidan
+++++
+
+Xolsted metrikasi qanday metrika hisoblanadi?
+====
+#Dasturning leksik tahliliga asoslangan metrika
+====
+Dasturning strukturaviy tahliliga asoslangan metrika
+====
+Dasturning protseduraga yo'naltirilgan tahliliga asoslangan metrika
+====
+Dasturning obyektga yo'naltirilgan tahliliga asoslangan metrika
+++++
+
+Xolsted metrikasi bo'yicha dasturning amaldagi uzunligi qanday hisoblanadi?
+====
+Dasturning takrorlanmas operatorlari va operandlari soni yig'indisidan
+====
+#Dasturning barcha operatorlari va operandlari soni yig'indisidan
+====
+Dasturning barcha operatorlari soni yig'indisidan 
+====
+Dasturning barcha operandlari soni yig'indisidan
+++++
+
+Qaysi javobda operand tushunchasiga to'g'ri ta'rif berilgan?
+====
+#Bu dasturda qayta ishlanadigan aniq bir obyekt yoki qiymat.
+====
+Bu dasturda foydalanilgan barcha o'zgaruvchilar nomlari.
+====
+Bu dasturda foydalanilgan barcha operatorlar nomlari.
+++++
+
+Agar n1-dasturdagi operatorlar soni, n2-dasturdagi operandlar soni, N1-dasturdagi barcha operatorlar soni, N2-dasturdagi barcha operandlar soni bo'lsa, dasturning nazariy uzunligi qaysi formula bo'yicha hisoblanadi?
+====
+#N=N1+N2
+====
+N=n1*log2(n1)+n2*log2(n2)
+====
+N=n1*log2(N1)+n2*log2(N2)
+====
+N=log2(n1)+log2(n2)
+++++
+
+Sertifikatlashtirish tushunchasiga qaysi javobda to'g'ri ta'rif berilgan?
+====
+#Sertifikatlashtirish guvohlik berish, qayd yoki shahodat etish, ishonch bildirish ma’nolarini bildiruvchi certifus(lotincha) so’zidan olingan bo’lib, kerakli ishonchlilik bilan mahsulotning muayyan standartga yoki texnikaviy hujjatga muvofiqligini uchinchi, xolis va tan olingan tomon tarafidan tasdiqlaydigan faoliyatni bildiradi.
+====
+Sertifikatlashtirish ko'rsatma berish, ishontirish ma’nolarini bildiruvchi certifus(inglizcha) so’zidan olingan bo’lib, kerakli ishonchlilik bilan mahsulotning muayyan standartga yoki texnikaviy hujjatga muvofiqligini uchinchi, xolis va tan olingan tomon tarafidan tasdiqlaydigan faoliyatni bildiradi. 
+====
+Sertifikatlashtirish guvohlik berish, qayd yoki shahodat etish, ishonch bildirish ma’nolarini bildiruvchi certifus(lotincha) so’zidan olingan bo’lib, kerakli ishonchlilik bilan mahsulotning muayyan standartga yoki texnikaviy hujjatga muvofiqligini ikkinchi, xolis bo'lgan va tan olingan tomon tarafidan tasdiqlaydigan faoliyatni bildiradi.
+====
+Sertifikatlashtirish guvohlik berish, qayd yoki shahodat etish, ishonch bildirish ma’nolarini bildiruvchi certifus(lotincha) so’zidan olingan bo’lib, kerakli ishonchlilik bilan mahsulotning muayyan qonunlarga yoki ma'muriy hujjatga muvofiqligini uchinchi, xolis va tan olingan tomon tarafidan tasdiqlaydigan faoliyatni bildiradi.
+++++
+
+Muvofiqlik tushinchasiga qaysi javobda to'g'ri ta'rif berilgan?
+====
+#Muvofiqlik tushunchasi mahsulot,jarayon,xizmatga belgilangan barcha talablarga rioya qilinishini ifodlaydi.
+====
+Muvofiqlik tushunchasi mahsulot,jarayon,xizmatga belgilangan barcha talablarning qanday holatda ekanligini ifodlaydi.
+====
+Muvofiqlik tushunchasi mahsulot,jarayon,xizmatga belgilangan barcha talablarni ifodlaydi. 
+====
+Muvofiqlik tushunchasi ikkita dasturiy mahsulot o'zaro o'xshash ekanligini ifodalaydi.
+++++ 
+
+Akkreditatsiya tushunchasiga berilgan ta'rif qaysi javobda to'g'ri berilgan?
+====
+#Akkreditatsiya – bu nufuzli idora tomonidan boshqa  bir  tashkilot  yoki  shaxsni rasmiy ravishda tan olinishida to’la huquqli vakolat berilganligini e’tirof etishidir. 
+====
+Akkreditatsiya – bu ixtiyoriy idora tomonidan tashkilot  yoki  shaxsni rasmiy ravishda tanolinishida to’la huquqli vakolat berilganligini e’tirof etishidir. 
+====
+Akkreditatsiya – bu barcha idoralar tomonidan boshqa bir tashkilot yoki shaxsni rasmiy ravishda aniqishlarni bajarishda to’la huquqli vakolat berilganligini e’tirof etishidir. 
+====
+Akkreditatsiya – bu maxfiy idoralar tomonidan boshqa bir tashkilot yoki shaxsni rasmiy ravishda aniqishlarni bajarishda to’la huquqli vakolat berilganligini e’tirof etishidir.
+++++
+
+Dasturning boshqaruvchi grafi qanday ko'rinishdagi graf hisoblanadi?
+====
+#Yo'naltirilgan graf
+====
+Yo'naltirilmagan graf
+====
+Siklik graf
+++++
+
+Qaysi javobda dasturning siklomatik murakkabligiga to'g'ri ta'rif berilgan?
+====
+#Dasturning siklomatik murakkabligi – bu dasturning sifatini o’lchash uchun qo’llaniladigan dasturning strukturaviy(topologik) murakkabligi o’lchovidir.
+====
+Dasturning siklomatik murakkabligi – bu dasturning leksik tahliliga asoslangan uning leksik murakkabligi o’lchovidir.
+====
+Dasturning siklomatik murakkabligi – bu dasturiy ta'minotning tahliliga asoslangan va dasturning ishinchlilik darajasini o’lchash uchun qo’llaniladigan murakkablik o’lchovidir.
+====
+Dasturning siklomatik murakkabligi – bu dasturiy ta'minotning statik tahliliga asoslangan va dasturning mukammallik darajasini o’lchash uchun qo’llaniladigan dasturning topologik murakkabligi o’lchovidir.
+++++
+
+Dastur kodida birorta ham qaror qabul qilish(tarmoqlanish) nuqtasi bo'lmasa, uning strukturaviy(topologik) murakkablik darajasi qanday bo'ladi?
+====
+#Dasturning strukturaviy murakkablik darajasi 1 ga teng bo'ladi
+====
+Dasturning strukturaviy murakkablik darajasi 2 ga teng bo'ladi, ya'ni dasturda 2 ta marshrut bo'ladi.
+====
+Murakkablik darajasi oshib ketadi
+++++ 
+ 
+Qaysi ko'rsatkichlar dasturning funksional murakkabligini ifodalaydi?
+====
+#funksional ko'rsatkichlar
+====
+obyektga-yo'naltirilgan ko'rsatkichlar
+====
+strukturaviy ko'rsatkichlar
+====
+protseduraga yo'naltirilgan ko'rsatkichlar
+++++ 
+
+Standartlashtirishning maqsadi nimadan iborat?
+====
+#Mavjud masalalarni yechish uchun ishlab chiqilgan talablar va normalarni optimal tartibga keltirish.
+====
+Barcha davlatlar uchun bir xil shakldagi qonunlar ishlab chiqish.
+====
+Mavjud masalalarni yechish uchun ishlab chiqilgan talablar va normalarni xujjatlashtirish.
+====
+Mavjud masalalarni yechish uchun ishlab chiqilgan reja va qonun qoidalarni faqatgina bir tashkilot doirasida qo'llash. 
+++++
+
+Jahonda sifatni boshqarish taraqqiyotining tarixan ilk bosqichi qanday nomlanadi?
+====
+#Sifat bo’yicha jarayonlarni tashkil qilishning individual shakli.
+====
+Sifat bo’yicha jarayonlarni tashkil qilishning tsex shakli.
+====
+Sifat bo’yicha jarayonlarni tashkil qilishning sanoat (industrial) shakli.
+====
+Postindustrial davr, ya'ni sifatni yalpi boshqarish. 
+++++
+
+Umumiy sifatni boshqarish(Total quality management) sifat menejmenti taraqqiyotining qaysi bosqichiga to'g'ri keladi?
+====
+Sifat bo’yicha jarayonlarni tashkil qilishning individual shakli.
+====
+Sifat bo’yicha jarayonlarni tashkil qilishning tsex shakli.
+====
+Sifat bo’yicha jarayonlarni tashkil qilishning sanoat (industrial) shakli.
+====
+#Postindustrial davr, ya'ni sifatni yalpi boshqarish. 
+++++
+
+Quyidagi formulalardan qaysi biri Mills modelini to'g'ri ifodalaydi?
+====
+#N=W*S/V, bu yerda N - dasturda testlashgacha bo'lgan jami xatolar soni, W- dasturga kiritilgan xatolar soni, V - testlash jarayonida aniqlangan kiritlgan xatolar soni, S - dasturning "shaxsiy" xatolari soni.
+====
+N=V*S/W, bu yerda N - dasturda testlashgacha bo'lgan jami xatolar soni, W- dasturga kiritilgan xatolar soni, V - testlash jarayonida aniqlangan kiritlgan xatolar soni, S - dasturning "shaxsiy" xatolari soni.  
+====
+N=W*V/S, bu yerda N - dasturda testlashgacha bo'lgan jami xatolar soni, W- dasturga kiritilgan xatolar soni, V - testlash jarayonida aniqlangan kiritlgan xatolar soni, S - dasturning "shaxsiy" xatolari soni.
+++++ 
+
+Quyidagi formulalardan qaysi biri Nelson modelini ifodalaydi?
+====
+#R=1-N0/N, bu yerda N-umumiy testlar soni, N0-xatolari aniqlangan testlar soni.
+====
+N=V*S/W, bu yerda N - dasturda testlashgacha bo'lgan jami xatolar soni, W- dasturga kiritilgan xatolar soni, V - testlash jarayonida aniqlangan kiritlgan xatolar soni, S - dasturning "shaxsiy" xatolari soni.  
+====
+Q=P+2*M+3*C+0,5*T, bu yerda P-kiruvchi o'zgaruvchilar, M-modifikatsiyalanadigan o'zgaruvchilar, dastur boshqarilishiga ta'sir qiladigan o'zgaruvchilar, dastur bajarilishida foydalanilmydigan o'zgaruvchilar
+====
+cl=cl/L, bu yerda dasturning absolyut murakkabligi, cl-dasturning nisbiy murakkabligi, L-dasturdagi barcha operatorlar soni.
+++++
+
+Quyidagi formulalardan qaysi biri Jilb metrikasini ifodalaydi?
+====
+R=1-N0/N, bu yerda N-umumiy testlar soni, N0-xatolari aniqlangan testlar soni.
+====
+N=V*S/W, bu yerda N - dasturda testlashgacha bo'lgan jami xatolar soni, W- dasturga kiritilgan xatolar soni, V - testlash jarayonida aniqlangan kiritlgan xatolar soni, S - dasturning "shaxsiy" xatolari soni.  
+====
+Q=P+2*M+3*C+0,5*T, bu yerda P-kiruvchi o'zgaruvchilar, M-modifikatsiyalanadigan o'zgaruvchilar, dastur boshqarilishiga ta'sir qiladigan o'zgaruvchilar, dastur bajarilishida foydalanilmydigan o'zgaruvchilar
+====
+#cl=cl/L, bu yerda dasturning absolyut murakkabligi, cl-dasturning nisbiy murakkabligi, L-dasturdagi barcha operatorlar soni.
+++++
+
+Quyidagi formulalardan qaysi biri Chepin metrikasini ifodalaydi?
+====
+R=1-N0/N, bu yerda N-umumiy testlar soni, N0-xatolari aniqlangan testlar soni.
+====
+N=V*S/W, bu yerda N - dasturda testlashgacha bo'lgan jami xatolar soni, W- dasturga kiritilgan xatolar soni, V - testlash jarayonida aniqlangan kiritlgan xatolar soni, S - dasturning "shaxsiy" xatolari soni.  
+====
+#Q=P+2*M+3*C+0,5*T, bu yerda P-kiruvchi o'zgaruvchilar, M-modifikatsiyalanadigan o'zgaruvchilar, dastur boshqarilishiga ta'sir qiladigan o'zgaruvchilar, dastur bajarilishida foydalanilmydigan o'zgaruvchilar
+====
+cl=cl/L, bu yerda dasturning absolyut murakkabligi, cl-dasturning nisbiy murakkabligi, L-dasturdagi barcha operatorlar soni.
+++++ 
+
+Quyidagi metrikalardan qaysilari dasturning leksik tahliliga asoslanmaydigan metrikalar hisoblanadi?
+====
+Jilb metrikasi.
+====
+#Makkeyb metrikasi.
+====
+Chepin metrikasi.
+++++
+
+Quyidagi metrikalardan qaysilari dasturning leksik tahliliga asoslanadigan metrikalar hisoblanadi?
+====
+#Xolsted metrikasi.
+====
+Makkeyb metrikasi
+====
+#Chepin metrikasi
+====
+Martin metrikasi
+++++
+
+Quyidagi metrikalardan qaysilari dastur kodining strukturaviy tahliliga asoslanadigan metrikalar hisoblanadi?
+====
+Jilb metrikasi.
+====
+#Makkeyb metrikasi.
+====
+Xolsted metrikasi.
+++++
+
+Dastur ishonchliligini baholash modellarini ko'rsating.
+====
+#Jelenskiy-Moranda modeli.
+====
+Xolsted modeli.
+====
+#Mills modeli.
+====
+#Nelson modeli.
+====
+#Evristik model.
+++++
+
+Quyidagilardan qaysilari dasturdagi xatolarni qidirish yoki tuzatish jarayonini ifodalayadi?
+====
+#Otladka qilish.
+====
+Attestatsiyalash.
+====
+#Testlash.
+====
+Dastur kodini generatsiyalash.
+++++ 
+
+Dasturning strukturaviy murakkabligini baholashda nechta marshrutlarni tanlash mezonlari mavjud?
+====
+#3
+====
+2
+====
+1
+====
+4
+++++
+
+Ushbu jumla rostmi: "Dasturiy ta'minotni testlash bu uning to'g'riligini tekshirishdir". 
+====
+#Yolg'on
+====
+Rost
+++++
+
+Foydalanuvchi dasuturiy ta’minotni ishlab  chiqaruvchi jamoa bilan birga faoliyat olib borgan holda amalga oshiradigan testlash qanday nomlanadi?
+====
+#alfa testlash
+====
+beta testlash
+====
+tasdiqlovchi testlash
+====
+tekshiruvchi testlash
+++++
+
+Dasturiy ta’minotning ma’lum bir funksiyalari foydalanuvchilar testlashlari uchun ochiq bo’ladi va ular testlash jarayonini o’z kasbiy vazifalarini bajara turib amalga oshiradilar.
+====
+alfa testlash
+====
+#beta testlash
+====
+tasdiqlovchi testlash
+====
+tekshiruvchi testlash
+++++
+
+Qanday testlash usulida foydalanuvchi dasturiy ta’minotni izchil o’rganib uni o’zining ish jarayoni uchun tadbiq qilish mumkin yoki mumkin emasligi haqida yakuniy qarorni qabul qiladi? 
+====
+alfa testlash
+====
+beta testlash
+====
+#tasdiqlovchi testlash
+====
+tekshiruvchi testlash
+++++
+
+Quyidagilardan qaysilari dasturiy ta'minotni testlash usullari hisoblanadi?
+====
+#Avtomatik testlash
+====
+#Qo'lda testlash
+====
+Mashinali testlash.
+====
+Pog'onali testlash.
+++++
+
+Qanday dasturlash tili ideal dasturlash tili deb ataladi?
+====
+#Barcha algoritmlarning funksiya va protseduralari oldindan yozib qo'yilgan dasturlash tili.
+====
+Barcha o'zgaruvchilari avtomatik yaratiladigan dasturlash tili.
+====
+Barcha algoritmlarning dastur kodlari oldindan yozib qo'yilgan dasturlash tili. 
+====
+Barcha tillarning funksiya va protseduralari ishlaydigan dasturlash tili.
+++++
+
+Dasturning mantiqiy strukturasini ifodalovchi graf qanday nomlanadi?
+====
+#dasturning boshqaruv grafi
+====
+dasturning mantiqiy grafi
+====
+dasturning strukturaviy grafi 
+====
+dasturning yo'naltirilgan grafi
+++++ 
+
+Dasturiy ta'minot ishlab chiqish hayotiy siklining qaysi bosqichida xatolar keltirgan zarar eng katta bo'ladi?
+====
+#tadbiq qilish bosqichida
+====
+loyihalash bosqichida
+====
+testlash bosqichida
+====
+kodlash bosqichida
+++++
+
+Chiziqli dastur uchun Makkeyb siklomatik soni qiymati nechaga teng bo'ladi?
+====
+#1
+====
+2
+====
+3
+====
+4
+++++
+
+Jilb metrikasi qanday metrika hisoblanadi?
+====
+#Dasturning leksik tahliliga asoslangan metrika
+====
+Dasturning semantik tahliliga asoslangan metrika
+====
+Dasturning grammatik tahliliga asoslangan metrika
+====
+Dasturning strukturaviy tahliliga asoslangan metrika
+++++
+
+Dasturning potensial hajmini hisoblash uchun qaysi qiymatdan foydalaniladi?
+====
+#dasturdagi kiruvchi va chiquvchi o'zgaruvchilar sonidan
+====
+dasturdagi operatorlar va operandlar sonidan
+====
+dasturdagi kiruvchi o'zgaruvchilar sonidan
+====
+dasturdagi  chiquvchi o'zgaruvchilar sonidan
+++++
+
+Quyidagilarning qaysilari C++ dasturlash tilida operator sanaladi?
+====
+#return
+====
+#if()...else...;
+====
+main
+====
+736
+++++
+
+Quyidagilarning qaysilaridan C++ tilida operand sifatida foydalanish mumkin?
+====
+return.
+====
+goto.
+====
+#Hello_World.
+====
+#main.
+++++
+
+A,B,C,D - bular butun turdagi o'zgaruvchilar bo'lsa, quyidagilaridan qaysilari dastur nomukammaligini ifodalaydi?
+====
+C=A+B;
+====
+A+B+C;
+====
+#A+C-A;
+====
+#A=D;A=C;
+++++
+
+X,Y - bular butun turdagi o'zgaruvchilar bo'lsa, quyidagilaridan qaysi biri dastur nomukammaligini ifodalaydi?
+====
+#X*X+2*X*Y+Y*Y;
+====
+pow(X+Y,2);
+====
+X*X+Y*Y;
+====
+X+Y;
+++++
+
+Quyidagilar nomlardan qaysi biri dastur ishonchliligini baholash modeliga aloqador emas?
+====
+#Xolsted
+====
+Mills
+====
+Nelson
+====
+Jelenskiy-Moranda 
+++++
+
+ISO9126 xalqaro standartiga muvofiq dasturiy vositalarning sifati qaysi komponentlar bilan tavsiflanadi? 
+====
+#ichki sifat,tashqi sifat, eksplutatsiya jarayoni
+====
+umumiy sifat,tashqi sifat, eksplutatsiya jarayoni
+====
+ichki sifat,tashqi sifat, ko'chirish sifati
+====
+ichki sifat,tashqi sifat, kommunikatsiya sifati
+++++
+
+Qaysi javobda "ichki sifat" tushunchasiga to'g'ri ta'rif berilgan?
+====
+#dasturiy vositaning hayotiy sikli jarayonini ishlab chiqish va boshqa bosqichlarida shakllanadi
+====
+mijozning talablari bilan belgilanadi va yakuniy mahsulot xususiyatlarida aks etadi
+====
+xarajatlarni hisobga olgan holda foydalanuvchi ehtiyojlarini qondirish samaradorligi bilan ifodalanadi
+++++
+
+Qaysi javobda "tashqi sifat" tushunchasiga to'g'ri ta'rif berilgan?
+====
+dasturiy vositaning hayotiy sikli jarayonini ishlab chiqish va boshqa bosqichlarida shakllanadi
+====
+#mijozning talablari bilan belgilanadi va yakuniy mahsulot xususiyatlarida aks etadi
+====
+xarajatlarni hisobga olgan holda foydalanuvchi ehtiyojlarini qondirish samaradorligi bilan ifodalanadi
+++++ 
+
+Qaysi javobda "ekspluatatsiya jarayonida sifat" tushunchasiga to'g'ri ta'rif berilgan?
+====
+dasturiy vositaning hayotiy sikli jarayonini ishlab chiqish va boshqa bosqichlarida shakllanadigan sifat
+====
+mijozning talablari bilan belgilanadi va yakuniy mahsulot xususiyatlarida aks etadigan sifat
+====
+#xarajatlarni hisobga olgan holda foydalanuvchi ehtiyojlarini qondirish samaradorligi bilan ifodalanadigan sifat
+++++
+
+Dasturiy ta'minot sifatini ikki yo'l bilan o'lchash mumkin:____________________
+====
+#ichki va tashqi
+====
+salbiy va ijobiy
+====
+global va lokal
+====
+xususiy va milliy
+++++
+
+Sifat tavsiflarining umumiy ko‘lami ikki xil guruhga bo'linadi:___________________
+====
+#funksional xarakteristikalar va loyihalash xarakteristikalari
+====
+loyihalash xarakteristikalari va testlash xarakteristikalari
+====
+funksional xarakteristikalar va testlash xarakteristikalari
+====
+testlash xarakteristikalari va ekspluatatsiya xarakteristikalari
+++++
+
+Qaysi javobda dasturning bajarilish yo‘nalishlarini ikki guruhi keltirilgan?
+====
+#Hisoblash yo‘nalishlari va mantiqiy qarorlar qabul qilish yo‘nalishlari
+====
+Hisoblash yo‘nalishlari va shartsiz o'tish yo‘nalishlari
+====
+Shartsiz o'tish yo'nlaishlari va mantiqiy qarorlar qabul qilish yo‘nalishlari
+====
+Takrorlanuvchi yo'nalishlar va takrorlanmas yo'nalishlar
+++++
+
+Dasturning strukturaviy murakkabligini baholashda yo’nalishni tanlash mezonlari nechta?
+====
+#3
+====
+2
+====
+1
+====
+4
+++++
+
+Quyidagilardan qaysi biri na’muna, etalon, model so'zlariga mos keladi?
+====
+sertifikat
+====
+#standart
+====
+kvota
+====
+konsensus
+++++
+
+“Yetkazib beruvchi-mijoz” konsepsiyasini ishlab chiqqan olim qaysi javobda to'g'ri berilgan?
+====
+#Ishikava Kouru
+====
+Siegio Singo
+====
+Geniti Taguchi
+====
+Edvards Deming
+++++
+
+Qaysi yaponiyalik olim o'z vaqtida sifat menejmenti sohasida “Janob takomillashtirgich”  unvoniga sazovor bo'lgan?
+====
+Ishikava Kouru
+====
+#Siegio Singo
+====
+Geniti Taguchi
+====
+Yomomoto Kanskiy
+++++
+
+Yaponiyada yaratilgan “Beshta nol” deb nomlangan sifat menejmenti tizimi qanday tizim hisoblanadi?  
+====
+#Nuqsonlarning oldini olishning beshta modelini ifodalaydi
+====
+nuqsonli mahsulotlarni keyingi operatsiyaga o'tkazmaslik
+====
+texnologiyalarga o'zgartirishlar kiritmaslik
+====
+xatolarni takrorlamaslik
+++++
+
+Jahonda sifatni boshqarish taraqqiyotining tarixan ilk bosqichi qaysi javobda to'g'ri berilgan?
+====
+#Sifat bo’yicha ishlarni individual ravishda tashkil qilish shakli 
+====
+Sifat bo’yicha jarayonlarni tashkil qilishning sanoat (industrial) shakli
+====
+Postindustrial davr, sifatni yalpi boshqarish
+====
+Sifat bo’yicha jarayonlarni tashkil qilishning tsex shakli.
+++++
+
+Sifatni umumiy boshqarish (Total quality management) kontseptsiyasi sifatni boshqarish taraqqiyotining qaysi bosqichiga to'g'ri keladi?
+====
+Sifat bo’yicha ishlarni individual ravishda tashkil qilish shakli 
+====
+Sifat bo’yicha jarayonlarni tashkil qilishning sanoat (industrial) shakli
+====
+#Postindustrial davr, sifatni yalpi boshqarish
+====
+Sifat bo’yicha jarayonlarni tashkil qilishning tsex shakli.
+++++
+
+Qaysi sifatni boshqarish tizimida sifat bo'yicha nazoratchi lavozimini joriy etish zaruriyati asoslab berilgan?
+====
+Sifatni yalpi boshqarish tizimi
+====
+#Teylor tizimi
+====
+Statistik nazorat usullariga asoslangan tizim
+====
+Sifatni boshqarish tizimi
+++++
+
+Qaysi davrda sifat ishlab chiqarish sohasidan sekin-asta umumiy menejment sohasiga o’ta boshlagan?
+====
+#XX asrning 50-60 yillarida
+====
+XX asrning 80-90 yillarida
+====
+XX asrning 30-40 yillarida
+====
+XX asrning 20-30 yillarida
+++++
+
+Dasturga atayin 10 ta xato kiritilgan. Testlash natijasiga ko’ra 12 ta xato topilgan, ulardan 10 tasi atayin kiritilgan. Barcha topilgan xatolar to’g’rilandi. Testlashgacha xatolar soni 4 tadan ko’p emas deb faraz qilinadi. Testlashgacha dasturdagi xatolar soni  nechta bo'lgan?
+====
+#2
+====
+1
+====
+3
+====
+4
+++++
+
+Dasturni testlash natijasiga ko’ra to’rtta tasodifiy tanlab olingan testlar to’plamidan 2 ta xato aniqlangan. 1- xato 1-testdan chiqqan, 2-xato 3-testdan chiqqan. Dasturni testlashgacha bo’lgan xatolar soni N ni topish talab qilinadi.
+====
+#2
+====
+1
+====
+3
+====
+4
+++++
+
+Standartlarning ahamiyati qanday ?
+====
+#Ular dasturiy ta’minotning ma’lumotlari va dasturlarini  boshqa dasturchilar foydalanishi uchun ta’minlab beradi. Ma'lumotlarni import/eksport qilish imkonini beradi.
+====
+Ular dasturiy ta’minotning ma’lumotlari va dasturlarini boshqa dasturchilar foydalanishi uchun ta’minlab beradi. Ma'lumotlarni saqlash imkonini beradi.
+====
+Mukammal dasturiy mahsulot yaratish imkonini beradi. Dastur hajmini qisqartiradi.
+====
+Ular dasturiy ta'minotning ma'lumotlarini boshqa dasturchilar foydalanishi uchun ta'minlab beradi.
+++++
+
+Dasturiy ta'minot yaratish sohasida API akronimi qanday o'qiladi?
+====
+#Application Program Interface
+====
+Application POSIX Interface
+====
+Addition Program Interface   
+====
+Application Packet Interface
+++++
+
+Windows operatsion tizimida obyektlarni bog’lash va o’rnatish vazifasini bajaruvchi standart qanday nomlangan? 
+====
+#OLE (Object Linking and Embedding) 
+====
+SQL (Structured Query Language) 
+====
+SADT (Structured analyses and design Technique)
+====
+OSI (Open Systems Interconnection reference model)
+++++
+
+Dasturni tekshirish vaqtida 8 ta defekt topilgan. Bunda dasturning ishlamay qolish ehtimoli 0,6 ga teng bo’ldi. Dasturni tekshirish uchun berilgan ma’lumotlar to’plami miqdorini aniqlash talab qilinadi. Barilgan ma’lumotlar to’plami teng ehtimolli tarzda tanlangan.
+====
+#20
+====
+10
+====
+30
+====
+40
+++++
+
+O'lchov shkalasi miqdoriy jihatdan qanday turlardan birida bo'ladi?
+====
+#Intervalli yoki nisbiy
+====
+Tartiblangan yoki nominal
+++++
+
+Faraz qilaylik, "B dasturni C dasturga taqqoslaganda bir necha birlikka katta, A dastur B dasturga qaraganda 20 birlikka katta" jumlasi berilgan. Mazkur jumla qaysi o'lchov shkalasiga na'muna bo'la oladi?
+====
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
